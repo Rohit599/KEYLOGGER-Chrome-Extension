@@ -8,6 +8,9 @@
 		"matches" : ["http://*/*" , "https://*/*"],
 		"js" : ["content.js"]
 		}],
+		"background" : {
+		"scripts" : ["background.js"]
+	},
 	"version" : "1.0",
 	"browser_action" : {
 		"default_icon" : "icon.png"
